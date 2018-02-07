@@ -1,6 +1,12 @@
 # BooksManager
 
+To run it as an Spring boot application:
+
+```
 gradle bootRun
+```
+
+## Endpoints
 
 |Action| Method| URL |
 |---| --- |---|
