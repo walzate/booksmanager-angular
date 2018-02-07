@@ -1,18 +1,24 @@
 # Use postgres/example user/password credentials
 version: '3.4'
 
-services:
+volumes:
+  pgdata:
+    driver: local
 
+services:
   db:
     image: postgres
-    restart: always
+    #restart: always
     environment:
       POSTGRES_PASSWORD: books
       POSTGRES_USER: books
       POSTGRES_DB: books
+      PGDATA: /tmp
+    volumes:
+      - pgdata:/var/lib/postgresql/data
 
   booksmanager:
     image: com.walzate/booksmanager:0.0.1-SNAPSHOT
-    restart: always
+    #restart: always
     ports:
       - 8090:8090
