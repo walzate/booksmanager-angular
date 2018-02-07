@@ -20,7 +20,7 @@ To create a book the body is:
 }
 ```
 
-##Lombok configuration
+## Lombok configuration
 
 
 First: download the plugin
@@ -30,7 +30,7 @@ Second:
 
 Settings->Build, Execution, Deployment->Compiler->Annotation Processors->Enable
 
-##Docker
+## Docker
 
 
 to generate the docker image:
