@@ -1,0 +1,18 @@
+# Use postgres/example user/password credentials
+version: '3.4'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: books
+      POSTGRES_USER: books
+      POSTGRES_DB: books
+
+  booksmanager:
+    image: com.walzate/booksmanager:0.0.1-SNAPSHOT
+    restart: always
+    ports:
+      - 8090:8090
