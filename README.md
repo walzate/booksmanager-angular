@@ -10,6 +10,8 @@ gradle bootRun
 
 
 ## POST body
+
+
 To create a book the body is:
 ``` json
 {
@@ -19,6 +21,7 @@ To create a book the body is:
 ```
 
 ##Lombok configuration
+
 First: download the plugin
 https://projectlombok.org/setup/intellij
 
@@ -27,6 +30,7 @@ Second:
 Settings->Build, Execution, Deployment->Compiler->Annotation Processors->Enable
 
 ##Docker
+
 to generate the docker image:
 ```
 ./gradlew buildDocker
