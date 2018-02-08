@@ -47,7 +47,5 @@ task buildDocker(type: Docker, dependsOn: build) {
 			from jar
 			rename {'app.jar'}
 		}
-		addFile('C:/Users/wilson.alzate/.aws/config', '/root/.aws/config')
-		addFile('C:/Users/wilson.alzate/.aws/credentials', '/root/.aws/credentials')
 	}
 }
