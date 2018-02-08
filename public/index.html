@@ -3,14 +3,49 @@
 	<head>
 		<title>Hello</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
-    	<script src="hello.js"></script>
+    <script src="hello.js"></script>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	</head>
 
 	<body>
-		<div ng-controller="Hello">
+		<div class="container" ng-controller="Hello">
 			{{title}}
-			<p>The ID is {{greeting.id}}</p>
-			<p>The content is {{greeting.content}}</p>
+			<p><a href="" ng-click="showEditorPanel()">Add<a></p>
+			<table>
+				<tr>
+					<th>ID</th>
+					<th>ISBN</th>
+					<th>Name</th>
+					<th>Update</th>
+					<th>Delete</th>
+				</tr>
+				<tr ng-repeat="book in books">
+					<td>{{ book.id }}</td>
+					<td>{{ book.isbn }}</td>
+					<td>{{ book.name }}</th>
+					<td><a href="" ng-click="updateBook(book)"><img src ="img/edit.png"><a></td>
+					<td><a href="" ng-click="deleteBook(book)"><img src ="img/delete.png"><a></th>
+				</tr>
+			</table>
+
+
+			<div class="form-group" style="display:{{showEdition}}">
+				<label >Id</form:label>
+				<input disabled maxlength="50" required="required" class="form-control" ng-model="book.id"/>
+				<label >ISBN</form:label>
+				<input maxlength="50" required="required" class="form-control" ng-model="book.isbn"/>
+				<label >Name</form:label>
+				<input maxlength="50" required="required" class="form-control" ng-model="book.name"/>
+				<button type="submit" class="btn btn-primary" ng-click='saveBook()'>Save</button>
+			</div>
+
 		</div>
+
+
+
 	</body>
 </html>

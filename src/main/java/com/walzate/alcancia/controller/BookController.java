@@ -13,23 +13,27 @@ public class BookController {
     @Autowired
     BooksRepository booksRepository;
 
+    @CrossOrigin
     @GetMapping("/books")
     public List<Book> getBooks(){
         return booksRepository.findAll();
     }
 
+    @CrossOrigin
     @PostMapping("/books")
     public void insertBook(@RequestBody Book book){
         book.getId();
         booksRepository.save(book);
     }
 
+    @CrossOrigin
     @GetMapping("/books/id={id}")
     @ResponseBody
     public Book findBookById(@PathVariable Integer id){
         return booksRepository.findOne(id);
     }
 
+    @CrossOrigin
     @DeleteMapping("/books/id={id}")
     public void deleteBookById(@PathVariable Integer id){
         booksRepository.delete(id);
