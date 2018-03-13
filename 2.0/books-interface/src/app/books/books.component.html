@@ -1,0 +1,25 @@
+<table>
+    <tr>
+      <th>ISBN</th>
+      <th>Name</th>
+    </tr>
+    <tr *ngFor="let book of books">
+      <td>{{book.isbn}}</td>
+      <td>{{book.name}} <button class="delete" title="delete book"
+        (click)="delete(book)">x</button></td>
+    </tr>
+</table>
+
+
+<div>
+    <label>ISBN:
+      <input #isbn />
+    </label>
+    <label>Name:
+        <input #name />
+      </label>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button (click)="add(isbn.value, name.value);isbn.value=''; name.value='';">
+      add
+    </button>
+</div>
